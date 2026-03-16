@@ -4,7 +4,7 @@
 
 const FIRNUM_CONFIG = {
   // ── Map Image ─────────────────────────────────────────────────
-  mapImage: 'map.png',
+  mapImage: 'map.jpg',
   imageWidth: 9212,
   imageHeight: 7124,
 
