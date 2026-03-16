@@ -51,7 +51,13 @@
   const [cx, cy] = gridToPixel(C.defaultCenter.x, C.defaultCenter.y);
   map.setView(pxToLatLng(cx, cy), C.defaultZoom);
 
-  L.imageOverlay(C.mapImage, bounds).addTo(map);
+  const mapOverlay = L.imageOverlay(C.mapImage, bounds).addTo(map);
+  const mapImageLoaded = new Promise(resolve => {
+    const img = new Image();
+    img.onload = resolve;
+    img.onerror = resolve;
+    img.src = C.mapImage;
+  });
 
   // ── Sidebar Toggle ────────────────────────────────────────
 
@@ -1205,7 +1211,7 @@
 
   async function init() {
     try {
-      await Promise.all([loadLocationsFromSheets(), loadRegions()]);
+      await Promise.all([loadLocationsFromSheets(), loadRegions(), mapImageLoaded]);
       discoverTypes();
       createMarkers();
       createRegions();
