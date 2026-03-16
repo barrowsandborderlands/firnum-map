@@ -671,9 +671,9 @@
 
 <h3>Lost &amp; Encounter Chances (d6)</h3>
 <table>
-<tr><th></th><th>Clear</th><th>Woods</th><th>River</th><th>Swamp</th><th>Mtns</th><th>Desert</th><th>Dead</th><th>Jungle</th><th>Arid</th><th>Crater</th><th>Canyon</th></tr>
-<tr><td><strong>Lost</strong></td><td>1</td><td>1-2</td><td>1</td><td>1-3</td><td>1-2</td><td>1-3</td><td>1-3</td><td>1-3</td><td>1-2</td><td>1</td><td>1-3</td></tr>
-<tr><td><strong>Enc.</strong></td><td>6</td><td>5-6</td><td>5-6</td><td>4-6</td><td>4-6</td><td>5-6</td><td>4-6</td><td>4-6</td><td>5-6</td><td>4-6</td><td>5-6</td></tr>
+<tr><th></th><th>Clear</th><th>Woods</th><th>River</th><th>Swamp</th><th>Mtns</th><th>Desert</th><th>Dead</th><th>Jungle</th><th>Arid</th><th>Crater</th><th>Canyon</th><th>Tundra</th></tr>
+<tr><td><strong>Lost</strong></td><td>1</td><td>1-2</td><td>1</td><td>1-3</td><td>1-2</td><td>1-3</td><td>1-3</td><td>1-3</td><td>1-2</td><td>1</td><td>1-3</td><td>1-2</td></tr>
+<tr><td><strong>Enc.</strong></td><td>6</td><td>5-6</td><td>5-6</td><td>4-6</td><td>4-6</td><td>5-6</td><td>4-6</td><td>4-6</td><td>5-6</td><td>4-6</td><td>5-6</td><td>4-6</td></tr>
 </table>
 
 <h3>Encounter Type (d12)</h3>
