@@ -1,0 +1,12 @@
+# Don't commit the massive tile folder to git
+# (use Netlify drag-and-drop or LFS instead)
+# tiles/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+tiles/
