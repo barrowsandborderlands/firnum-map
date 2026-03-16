@@ -659,6 +659,7 @@
   function buildWildernessPanel() {
     wildernessPanel.innerHTML = `<div class="wilderness-content">
 <h3>Daily Wilderness Procedure</h3>
+<p><strong>LEGEND</strong> Purple Dots = Dead Zone ; Three Triangle = Mountain ; Inverted Triangles = Inverted Mountain ; Yellow = Desert ; Green Lines = Forest ; Light Blue = Swamp ; Red Lines = Roads ; Red Squares = Cities ; Red Dots = Meteor Craters ; Grey = Canyons ; Orange Dots = Arid Plains ; Things that look like Volcanos are Volcanos ; Dark Blue = Water.</p>
 <p><strong>START:</strong> Roll d6 to check if lost. If lost, travel 1 square in a random direction (d8: 1=N, 2=NE, 3=E, 4=SE, 5=S, 6=SW, 7=W, 8=NW), then resume normal travel.</p>
 <p><strong>MOVE:</strong> Travel squares equal to daily movement. Roll 1d6 for encounters <strong>3 times/day</strong> (morning, noon, night) based on terrain.</p>
 <p><strong>INTERACTION:</strong> Interact with or evade encounters. Evasion Roll required for Wandering Monsters/Pilgrims (B&amp;B Vol-4 pg.22). Parties spot monsters 120'-720' away unless surprised.</p>
