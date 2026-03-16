@@ -1,18 +1,15 @@
 /**
  * Firnum Map Configuration
  */
-
 const FIRNUM_CONFIG = {
   // ── Map Image ─────────────────────────────────────────────────
   mapImage: 'map.jpg',
   imageWidth: 9212,
   imageHeight: 7124,
-
   // Zoom range (negative = zoom out further, higher = zoom in more)
   minZoom: -2,
   maxZoom: 4,
   defaultZoom: 0,
-
   // ── Grid System ───────────────────────────────────────────────
   // EW.NS format. NS increases DOWNWARD on the image.
   //   NW (top-left):  -172.-036
@@ -30,24 +27,19 @@ const FIRNUM_CONFIG = {
     yMin: -36.5,   // top edge of image
     yMax: 264.5,   // bottom edge of image
   },
-
   // Default center (EW=21.5, NS=114)
   defaultCenter: { x: 21.5, y: 114 },
-
   // ── Google Sheets Integration ────────────────────────────────
   sheets: {
-    // For local dev you can hard-code a fallback key or leave empty
-    // In production → use Netlify environment variable GOOGLE_SHEETS_API_KEY
-    apiKey: window.GOOGLE_SHEETS_API_KEY || 'placeholder-for-local-dev',
+    apiKey: 'AIzaSyAE1DdrtT9OJ-PCvH9CGl5X6-ST-IQYjiY',
     spreadsheetId: '10kXopE2ZUUH6D1dIFBiTtp0-8gdmXiuNfr5P9QS306I',
     locationsTab: 'Map Locations',        // tab name for location data
     charactersTab: 'Character Map Placement', // tab name for character placements
+    appsScriptUrl: 'https://script.google.com/u/1/home/projects/1n_qaHPNO9z_P2Xq-CYiWjdP-U2jd1CL6XE39ymt6cBz3iuoasaTpEmH9/edit',
   },
-
   // ── Display ───────────────────────────────────────────────────
   mapTitle: 'Map of Firnum',
   backgroundColor: '#14141e',
 };
-
 // Make it globally available (no export needed)
 window.FIRNUM_CONFIG = FIRNUM_CONFIG;
