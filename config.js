@@ -36,7 +36,7 @@ const FIRNUM_CONFIG = {
 
   // ── Google Sheets Integration ────────────────────────────────
   sheets: {
-    apiKey: import.meta.env.VITE_GOOGLE_SHEETS_API_KEY || 'placeholder-for-local-dev',
+    apiKey: (typeof VITE_GOOGLE_SHEETS_API_KEY !== 'undefined' ? VITE_GOOGLE_SHEETS_API_KEY : 'placeholder-for-local-dev'),
     spreadsheetId: '10kXopE2ZUUH6D1dIFBiTtp0-8gdmXiuNfr5P9QS306I',
     locationsTab: 'Map Locations',        // tab name for location data
     charactersTab: 'Character Map Placement', // tab name for character placements
@@ -47,4 +47,4 @@ const FIRNUM_CONFIG = {
   backgroundColor: '#14141e',
 };
 
-export default FIRNUM_CONFIG;   // ← make sure you export it if needed
+// FIRNUM_CONFIG is used as a global by app.js
