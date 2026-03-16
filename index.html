@@ -344,6 +344,31 @@
       color: #c66; font-size: 11px; padding: 4px 0;
     }
 
+    /* Wilderness Travel Panel */
+    .wilderness-content { padding: 14px; font-size: 12px; line-height: 1.6; }
+    .wilderness-content h3 {
+      color: #c8b888; font-size: 14px; margin: 14px 0 6px; padding-bottom: 4px;
+      border-bottom: 1px solid rgba(180,160,120,0.2); letter-spacing: 1px;
+    }
+    .wilderness-content h3:first-child { margin-top: 0; }
+    .wilderness-content p { color: #c0b8a8; margin: 6px 0; }
+    .wilderness-content strong { color: #c8b888; }
+    .wilderness-content ul { padding-left: 16px; margin: 4px 0; }
+    .wilderness-content li { color: #c0b8a8; margin: 3px 0; }
+    .wilderness-content table {
+      width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 11px;
+    }
+    .wilderness-content th {
+      background: rgba(180,160,120,0.15); color: #c8b888; padding: 5px 6px;
+      text-align: left; border: 1px solid rgba(180,160,120,0.2); font-weight: 600;
+      white-space: nowrap;
+    }
+    .wilderness-content td {
+      padding: 4px 6px; border: 1px solid rgba(180,160,120,0.12); color: #c0b8a8;
+    }
+    .wilderness-content tr:hover td { background: rgba(180,160,120,0.06); }
+    .wilderness-content .note { color: #888; font-size: 11px; font-style: italic; margin: 4px 0; }
+
     /* Grid number labels — font-size and line-height set dynamically per zoom */
     .grid-label {
       font-family: 'Courier New', monospace;
@@ -378,6 +403,7 @@
       <div class="type-toggles" id="typeToggles"></div>
       <div class="region-toggles" id="regionToggles"></div>
       <div class="sidebar-list" id="sidebarList"></div>
+      <div class="sidebar-list" id="wildernessPanel" style="display:none;"></div>
       <div class="sidebar-footer" id="sidebarFooter">0 locations</div>
     </div>
     <div id="map"></div>
@@ -402,6 +428,16 @@
       <label class="travel-label">Squares per day of movement:</label>
       <input type="number" id="travelSpeed" class="travel-input" value="24" min="1" />
       <div class="travel-instructions" id="travelInstructions">Click two points on the map to measure travel distance.</div>
+      <details style="font-size:11px;color:#a09888;margin-top:2px;cursor:pointer;">
+        <summary style="color:#c8b888;font-size:12px;">Terrain Movement Costs</summary>
+        <div style="margin-top:6px;line-height:1.7;">
+          <div><span style="color:#e0d8c8;">1 movement</span> — Clear, Roads</div>
+          <div><span style="color:#e0d8c8;">2 movement</span> — Woods, Desert, Tundra, Arid Plains, Dead Zones</div>
+          <div><span style="color:#e0d8c8;">3 movement</span> — Mountains, Marsh, Craters, Jungles, Swamps, River crossing (no ford)</div>
+          <div><span style="color:#e0d8c8;">4 movement</span> — Canyons</div>
+          <div style="margin-top:4px;color:#888;font-style:italic;">Trails through mountains: 2/hex. Trails through woods/swamps: no penalty.</div>
+        </div>
+      </details>
       <div class="travel-points" id="travelPoints">
         <div class="travel-point" id="travelPointA"><span class="point-label">A:</span> <span class="point-value">—</span></div>
         <div class="travel-point" id="travelPointB"><span class="point-label">B:</span> <span class="point-value">—</span></div>
