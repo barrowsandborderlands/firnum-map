@@ -35,7 +35,7 @@ const FIRNUM_CONFIG = {
     spreadsheetId: '10kXopE2ZUUH6D1dIFBiTtp0-8gdmXiuNfr5P9QS306I',
     locationsTab: 'Map Locations',        // tab name for location data
     charactersTab: 'Character Map Placement', // tab name for character placements
-    appsScriptUrl: 'https://script.google.com/u/1/home/projects/1n_qaHPNO9z_P2Xq-CYiWjdP-U2jd1CL6XE39ymt6cBz3iuoasaTpEmH9/edit',
+    appsScriptUrl: 'https://script.google.com/macros/s/AKfycbyVWI4KinaWzWtiYRyHWu8-M3tBO3vondC09xak8jVKa3OmVKPlI5ucv3KGe6a3-wA/exec',
   },
   // ── Display ───────────────────────────────────────────────────
   mapTitle: 'Map of Firnum',
