@@ -36,7 +36,9 @@ const FIRNUM_CONFIG = {
 
   // ── Google Sheets Integration ────────────────────────────────
   sheets: {
-    apiKey: import.meta.env.VITE_GOOGLE_SHEETS_API_KEY || 'placeholder-for-local-dev',
+    // For local dev you can hard-code a fallback key or leave empty
+    // In production → use Netlify environment variable GOOGLE_SHEETS_API_KEY
+    apiKey: window.GOOGLE_SHEETS_API_KEY || 'placeholder-for-local-dev',
     spreadsheetId: '10kXopE2ZUUH6D1dIFBiTtp0-8gdmXiuNfr5P9QS306I',
     locationsTab: 'Map Locations',        // tab name for location data
     charactersTab: 'Character Map Placement', // tab name for character placements
@@ -47,4 +49,5 @@ const FIRNUM_CONFIG = {
   backgroundColor: '#14141e',
 };
 
-export default FIRNUM_CONFIG;   // ← make sure you export it if needed
+// Make it globally available (no export needed)
+window.FIRNUM_CONFIG = FIRNUM_CONFIG;
