@@ -11,3 +11,8 @@
   for = "/tiles/*"
   [headers.values]
     Cache-Control = "public, max-age=86400, immutable"
+
+[[headers]]
+  for = "/map.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, immutable"
