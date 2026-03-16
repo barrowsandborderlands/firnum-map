@@ -8,6 +8,11 @@
     Cache-Control = "public, max-age=3600"
 
 [[headers]]
+  for = "/map.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, immutable"
+
+[[headers]]
   for = "/tiles/*"
   [headers.values]
     Cache-Control = "public, max-age=86400, immutable"
