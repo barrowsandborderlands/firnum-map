@@ -156,8 +156,9 @@
   });
 
   map.on('click', function (e) {
-    // Skip default popup if travel mode handled this click
+    // Skip default popup if travel mode or draw mode handled this click
     if (e.originalEvent._travelHandled) return;
+    if (e.originalEvent._drawHandled) return;
     if (travelMode) return;
 
     const px = e.latlng.lng;
@@ -659,7 +660,6 @@
   function buildWildernessPanel() {
     wildernessPanel.innerHTML = `<div class="wilderness-content">
 <h3>Daily Wilderness Procedure</h3>
-<p><strong>LEGEND</strong> Purple Dots = Dead Zone ; Three Triangle = Mountain ; Inverted Triangles = Inverted Mountain ; Yellow = Desert ; Green Lines = Forest ; Light Blue = Swamp ; Red Lines = Roads ; Red Squares = Cities ; Red Dots = Meteor Craters ; Grey = Canyons ; Orange Dots = Arid Plains ; Things that look like Volcanos are Volcanos ; Dark Blue = Water.</p>
 <p><strong>START:</strong> Roll d6 to check if lost. If lost, travel 1 square in a random direction (d8: 1=N, 2=NE, 3=E, 4=SE, 5=S, 6=SW, 7=W, 8=NW), then resume normal travel.</p>
 <p><strong>MOVE:</strong> Travel squares equal to daily movement. Roll 1d6 for encounters <strong>3 times/day</strong> (morning, noon, night) based on terrain.</p>
 <p><strong>INTERACTION:</strong> Interact with or evade encounters. Evasion Roll required for Wandering Monsters/Pilgrims (B&amp;B Vol-4 pg.22). Parties spot monsters 120'-720' away unless surprised.</p>
@@ -672,9 +672,9 @@
 
 <h3>Lost &amp; Encounter Chances (d6)</h3>
 <table>
-<tr><th></th><th>Clear</th><th>Woods</th><th>River</th><th>Swamp</th><th>Mtns</th><th>Desert</th><th>Dead</th><th>Jungle</th><th>Arid</th><th>Crater</th><th>Canyon</th><th>Tundra</th></tr>
-<tr><td><strong>Lost</strong></td><td>1</td><td>1-2</td><td>1</td><td>1-3</td><td>1-2</td><td>1-3</td><td>1-3</td><td>1-3</td><td>1-2</td><td>1</td><td>1-3</td><td>1-2</td></tr>
-<tr><td><strong>Enc.</strong></td><td>6</td><td>5-6</td><td>5-6</td><td>4-6</td><td>4-6</td><td>5-6</td><td>4-6</td><td>4-6</td><td>5-6</td><td>4-6</td><td>5-6</td><td>4-6</td></tr>
+<tr><th></th><th>Clear</th><th>Woods</th><th>River</th><th>Swamp</th><th>Mtns</th><th>Desert</th><th>Dead</th><th>Jungle</th><th>Arid</th><th>Crater</th><th>Canyon</th></tr>
+<tr><td><strong>Lost</strong></td><td>1</td><td>1-2</td><td>1</td><td>1-3</td><td>1-2</td><td>1-3</td><td>1-3</td><td>1-3</td><td>1-2</td><td>1</td><td>1-3</td></tr>
+<tr><td><strong>Enc.</strong></td><td>6</td><td>5-6</td><td>5-6</td><td>4-6</td><td>4-6</td><td>5-6</td><td>4-6</td><td>4-6</td><td>5-6</td><td>4-6</td><td>5-6</td></tr>
 </table>
 
 <h3>Encounter Type (d12)</h3>
@@ -1262,6 +1262,18 @@
       // Load character placements
       await loadCharacters();
       createCharacterMarkers();
+
+      // Initialize drawing tools & party token
+      if (window.initDrawTools) {
+        window.initDrawTools(map, {
+          pxToLatLng,
+          gridToPixel,
+          pixelToGrid,
+          formatGrid,
+          imageWidth: C.imageWidth,
+          imageHeight: C.imageHeight,
+        });
+      }
     } catch (err) {
       console.warn('Init error:', err);
     }
