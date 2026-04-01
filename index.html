@@ -369,6 +369,46 @@
     .wilderness-content tr:hover td { background: rgba(180,160,120,0.06); }
     .wilderness-content .note { color: #888; font-size: 11px; font-style: italic; margin: 4px 0; }
 
+    /* ── Drawing Tools ────────────────────────────────── */
+    #drawToolbar {
+      position: fixed; bottom: 60px; left: 50%; transform: translateX(-50%);
+      z-index: 1003; display: none; flex-direction: column; align-items: center; gap: 6px;
+      background: rgba(18,18,28,0.96); border: 1px solid rgba(180,160,120,0.5);
+      border-radius: 10px; padding: 10px 14px; backdrop-filter: blur(6px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
+    #drawToolbar.visible { display: flex; }
+    .draw-toolbar-row { display: flex; align-items: center; gap: 6px; }
+    .draw-tool-btn {
+      background: rgba(30,30,45,0.8); border: 1px solid rgba(180,160,120,0.3);
+      color: #c8b888; padding: 7px 11px; border-radius: 6px; cursor: pointer;
+      font-size: 15px; transition: all 0.15s; line-height: 1;
+    }
+    .draw-tool-btn:hover { border-color: rgba(180,160,120,0.8); background: rgba(180,160,120,0.15); }
+    .draw-tool-btn.active { background: rgba(180,160,120,0.3); border-color: #c8b888; }
+    .draw-options { gap: 8px; }
+    #drawColor { width: 30px; height: 28px; border: 1px solid rgba(180,160,120,0.3); border-radius: 4px; background: none; cursor: pointer; padding: 0; }
+    #drawWidth { width: 70px; accent-color: #c8b888; }
+    .draw-width-label { display: flex; align-items: center; }
+    .draw-clear-btn { font-size: 12px !important; color: #c66 !important; border-color: rgba(200,100,100,0.3) !important; }
+    .draw-clear-btn:hover { background: rgba(200,100,100,0.15) !important; }
+    .draw-close-btn { font-size: 18px !important; padding: 4px 10px !important; }
+    .draw-cursor { cursor: crosshair !important; }
+    .draw-cursor .leaflet-grab { cursor: crosshair !important; }
+    .eraser-cursor { cursor: not-allowed !important; }
+    .eraser-cursor .leaflet-grab { cursor: not-allowed !important; }
+    .draw-text-label { background: none !important; border: none !important; }
+
+    /* ── Party Token ──────────────────────────────────── */
+    .party-token-icon {
+      filter: drop-shadow(0 0 6px rgba(255,200,50,0.8)) drop-shadow(0 0 12px rgba(255,150,0,0.5));
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+    .party-token-icon:hover {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 10px rgba(255,200,50,1)) drop-shadow(0 0 18px rgba(255,150,0,0.7));
+    }
+
     /* Grid number labels — font-size and line-height set dynamically per zoom */
     .grid-label {
       font-family: 'Courier New', monospace;
@@ -415,7 +455,7 @@
     <button class="map-btn" id="gridToggle">Grid: OFF</button>
     <button class="map-btn" id="regionsToggle">Regions: OFF</button>
     <button class="map-btn" id="travelToggle">Travel</button>
-    <a class="map-btn" href="https://barrowsandborderlands.com/" target="_blank" rel="noopener" style="text-decoration:none;">Barrows & Borderlands</a>
+    <a class="map-btn" href="https://barrowsandborderlands.com/pages/campaign-links" target="_blank" rel="noopener" style="text-decoration:none;">Campaign Links</a>
   </div>
 
   <!-- Travel Distance Calculator Panel -->
@@ -487,6 +527,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <script src="config.js"></script>
+  <script src="draw-tools.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
